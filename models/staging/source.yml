@@ -19,6 +19,16 @@ sources:
       - name: raw_supplies
         description: "TBD"   
 
+      - name: raw_customers
+        description: "This the raw customers table"
+
+
+      - name: raw_products
+        description: "This is the raw products table"
+
+
+      - name: raw_stores
+        description: "This is the table containing the stores data"         
 
 
 

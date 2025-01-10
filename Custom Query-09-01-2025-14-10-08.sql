@@ -1,3 +1,3 @@
 
 
-select * from {{ source('jaffle_data','raw_orders') }}
+select * from  {{ source('jaffle_data','raw_orders') }}
