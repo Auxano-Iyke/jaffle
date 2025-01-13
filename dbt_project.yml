@@ -19,25 +19,25 @@ clean-targets:
 models:
   jaffle:
     aggregates:
-      +schema: dbt_jaffle_agg
+      +schema: jaffle_agg
       +materialized: table
       +docs:
         node_color: '#FFD700'
 
     core:
-      +schema: dbt_jaffle_core
+      +schema: jaffle_core
       +materialized: table
       +docs:
         node_color: '#006400'
 
     intermediate:
-      +schema: dbt_jaffle_imd
+      +schema: jaffle_imd
       +materialized: table
       +docs:
         node_color: '#4f42b5'
 
     staging:
-      +schema: dbt_jaffle_stg
+      +schema: jaffle_stg
       +materialized: view
       +docs:
         node_color: '#FFA500'
@@ -47,7 +47,7 @@ profile: 'jaffle'
 seed-paths:
 - seeds
 seeds:
-    +schema: dbt_jaffle_stg
+    +schema: jaffle_stg
     +docs:
       node_color: '#FFA500'
 snapshot-paths:
