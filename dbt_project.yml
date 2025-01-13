@@ -31,10 +31,20 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   jaffle:
-    # Config indicated by + and applies to all files under models/example/
-    staging:
-      +schema: jaffle_stg
-      +materialized: view
-    intermediate:
-      +schema: jaffle_imd
+    core:
+      +schema: dbt_jaffle_core
       +materialized: table
+      +docs:
+        node_color: '#006400'
+
+    intermediate:
+      +schema: dbt_jaffle_intermediate
+      +materialized: table
+      +docs:
+        node_color: '#4f42b5'
+
+    staging:
+      +schema: dbt_jaffle_staging
+      +materialized: view
+      +docs:
+        node_color: '#FFA500'
