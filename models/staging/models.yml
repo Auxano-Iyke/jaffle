@@ -1,0 +1,96 @@
+version: 2
+
+models:
+  - name: stg_order_items
+    description: "This model processes the raw order items data"
+    columns:
+      - name: id
+        description: "Unique identifier for each order item"
+        tests:
+          - not_null
+          - unique
+      - name: sku
+        description: "Stock keeping unit for the product"
+      - name: order_id
+        description: "Identifier for the order"
+
+  - name: stg_orders
+    description: "This model processes the raw orders data"
+    columns:
+      - name: order_id
+        description: "Unique identifier for each order"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "ID of the customer"
+      - name: store_id
+        description: "ID of the store"
+      - name: order_date
+        description: "Date the order was placed"
+      - name: tax
+        description: "Tax applied on the order"
+      - name: gross_revenue
+        description: "Gross revenue from the order"
+      - name: net_revenue
+        description: "Net revenue after taxes and discounts"
+
+  - name: stg_customers
+    description: "This model processes the raw customer data"
+    columns:
+      - name: id
+        description: "Unique identifier for each customer"
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: "Name of the customer"
+
+  - name: stg_products
+    description: "TBD"
+    columns:
+      - name: sku
+        description: "Stock keeping unit for the product"
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: "Name of the product"
+      - name: description
+        description: "Description of the product"
+      - name: type
+        description: "Type of the product"
+      - name: price
+        description: "Price of the product"
+
+  - name: stg_stores
+    description: "TBD"
+    columns:
+      - name: id
+        description: "Unique identifier for each store"
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: "Name of the store"
+      - name: tax_rate
+        description: "Tax rate for the store"
+      - name: opened_at
+        description: "Date the store was opened"
+
+  - name: stg_supplies
+    description: "TBD"
+    columns:
+      - name: id
+        description: "Unique identifier for each supplier"
+        tests:
+          - not_null
+          - unique
+      - name: cost
+        description: "Cost of the supply"
+      - name: sku
+        description: "Stock keeping unit for the supply"
+      - name: perishable
+        description: "Perishable status of the supply"
+      - name: name
+        description: "Name of the supply"

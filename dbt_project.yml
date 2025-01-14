@@ -1,20 +1,13 @@
+model-paths:
+  - models
+analysis-paths:
+  - analyses
+macro-paths:
+  - macros
 
-model-paths: 
-- models
-analysis-paths: 
-- analyses
-test-paths: 
-- tests
-seed-paths: 
-- seeds
-macro-paths: 
-- macros
-snapshot-paths: 
-- snapshots
-
-clean-targets:     
-- target
-- dbt_packages
+clean-targets:
+  - target
+  - dbt_packages
 
 models:
   jaffle:
@@ -22,42 +15,48 @@ models:
       +schema: jaffle_agg
       +materialized: table
       +docs:
-        node_color: '#FFD700'
+        node_color: "#FFD700"
 
     core:
       +schema: jaffle_core
       +materialized: table
       +docs:
-        node_color: '#006400'
+        node_color: "#006400"
 
     intermediate:
       +schema: jaffle_imd
       +materialized: table
       +docs:
-        node_color: '#4f42b5'
+        node_color: "#4f42b5"
 
     staging:
       +schema: jaffle_stg
       +materialized: view
       +docs:
-        node_color: '#FFA500'
+        node_color: "#FFA500"
 
-name: 'jaffle'
-profile: 'jaffle'
+name: "jaffle"
+profile: "jaffle"
+
 seed-paths:
-- seeds
+  - seeds
 seeds:
-    +schema: jaffle_stg
-    +docs:
-      node_color: '#FFA500'
+  +schema: jaffle_stg
+  +docs:
+    node_color: "#FFA500"
+
 snapshot-paths:
-- snapshots
+  - snapshots
 snapshots:
-    +docs:
-      node_color: '#FFA500'
+  +docs:
+    node_color: "#FFA500"
+
 target-path: target
+
 test-paths:
-- tests
+  - tests
+
 vars:
   null_default_string: "'null'"
+
 version: 1.0.0
