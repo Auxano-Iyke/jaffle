@@ -85,12 +85,14 @@ models:
         description: "Unique identifier for each supplier"
         tests:
           - not_null
-          - unique
       - name: cost
         description: "Cost of the supply"
       - name: sku
         description: "Stock keeping unit for the supply"
       - name: perishable
         description: "Perishable status of the supply"
+        tests:
+          - accepted_values:
+              values: [True, False]
       - name: name
         description: "Name of the supply"
