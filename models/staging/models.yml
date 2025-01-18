@@ -93,6 +93,24 @@ models:
         description: "Perishable status of the supply"
         tests:
           - accepted_values:
-              values: [True, False]
+              values: ["TRUE", "FALSE"]
       - name: name
         description: "Name of the supply"
+
+  - name: stg_payments
+    description: "TBD"
+    columns:
+      - name: id
+        description: "Unique identifier for each payment"
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: "Identifier for the order"
+      - name: payment_method
+        description: "Method of payment"
+        tests:
+          - accepted_values:
+              values: ["bank_transfer", "credit_card", "coupon", "gift_card"]
+      - name: amount
+        description: "Amount of the payment"

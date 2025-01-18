@@ -51,7 +51,7 @@ sources:
             description: "TBD"
             tests:
               - accepted_values:
-                  values: [True, False]
+                  values: ["TRUE", "FALSE"]
           - name: name
             description: "TBD"
       - name: raw_customers
@@ -94,3 +94,26 @@ sources:
             description: "TBD"
           - name: opened_at
             description: "TBD"
+
+  - name: stripe
+    description: "TBD"
+    database: ADB
+    tables:
+      - name: raw_payments
+        description: "This is the raw orders payments table"
+        columns:
+          - name: id
+            description: "Unique identifier for each payment"
+            tests:
+              - not_null
+              - unique
+          - name: order_id
+            description: "Identifier for the order"
+          - name: payment_method
+            description: "order payment method"
+            tests:
+              - accepted_values:
+                  values:
+                    ["bank_transfer", "credit_card", "coupon", "gift_card"]
+          - name: amount
+            description: "Amount of the payment"
