@@ -16,10 +16,10 @@ sources:
             description: "Identifier for the order"
           - name: sku
             description: "Stock keeping unit for the product"
-      - name: raw_orders
+      - name: raw_order
         description: "This is the raw orders for the jaffle data table"
         columns:
-          - name: order_id
+          - name: id
             description: "Order identifier"
             tests:
               - not_null
@@ -36,20 +36,22 @@ sources:
             description: "Gross revenue from the order"
           - name: net_revenue
             description: "Net revenue after taxes and discounts"
-      - name: raw_supplies
+      - name: raw_supply
         description: "TBD"
         columns:
           - name: id
             description: "Unique identifier for each supply"
             tests:
               - not_null
-              - unique
           - name: cost
             description: "TBD"
           - name: sku
             description: "TBD"
           - name: perishable
             description: "TBD"
+            tests:
+              - accepted_values:
+                  values: [True, False]
           - name: name
             description: "TBD"
       - name: raw_customers

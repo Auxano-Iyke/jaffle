@@ -1,1 +1,1 @@
-select * from {{ source('jaffle_data','raw_supplies') }}
+select * from {{ source('jaffle_data','raw_supply') }}

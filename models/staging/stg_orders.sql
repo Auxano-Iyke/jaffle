@@ -4,11 +4,11 @@ with orders as (
         , r.customer_id
         , r.ordered_at as order_date
         , r.store_id
-        , r.subtotal as gross_revenue
+        , r.sub_total as gross_revenue
         , r.tax_paid as tax
         , r.order_total as net_revenue
     from
-        {{ source('jaffle_data','raw_orders') }} as r
+        {{ source('jaffle_data','raw_order') }} as r
 )
 
 select
