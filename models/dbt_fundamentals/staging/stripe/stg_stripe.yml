@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_stripe__payments
+    tags: ["dbt_fundamentals"]
+    columns:
+      - name: payment_id
+        description: "Unique identifier for the payments"
+        tests:
+          - not_null
+      - name: order_id
+        description: "Unique identifier for the order"
+      - name: payment_method
+        description: "Payment method used"
+      - name: status
+        description: "Current status of the payment"
+      - name: amount
+        description: "Amount of the payment"
+      - name: created_at
+        description: "Date the payment was made"
