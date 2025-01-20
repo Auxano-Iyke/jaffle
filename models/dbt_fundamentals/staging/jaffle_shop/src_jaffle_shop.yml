@@ -1,0 +1,51 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: ADB
+    schema: jaffle_shop
+    tables:
+      - name: customers
+        description: "List of customers and their attributes"
+        tags: ["dbt_fundamentals"]
+        columns:
+          - name: id
+            description: "Unique identifier for the customer"
+            tests:
+              - unique
+              - not_null
+          - name: first_name
+            description: "First name of the customer"
+            tests:
+              - not_null
+          - name: last_name
+            description: "Last name of the customer"
+            tests:
+              - not_null
+      - name: orders
+        description: "List of orders and their attributes"
+        tags: ["dbt_fundamentals"]
+        columns:
+          - name: id
+            description: "Unique identifier for the order"
+            tests:
+              - unique
+              - not_null
+          - name: user_id
+            description: "Unique identifier for the customer who placed the order"
+            tests:
+              - not_null
+          - name: order_date
+            description: "Date the order was placed"
+            tests:
+              - not_null
+          - name: status
+            description: "Current status of the order"
+            tests:
+              - accepted_values:
+                  values:
+                    - completed
+                    - shipped
+                    - returned
+                    - return_pending
+                    - placed

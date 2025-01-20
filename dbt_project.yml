@@ -35,6 +35,20 @@ models:
       +docs:
         node_color: "#FFA500"
 
+    dbt_fundamentals:
+      +materialized: view
+      +docs:
+        node_color: "#FFA500"
+      intermediate:
+        +docs:
+          node_color: "#006400"
+      mart:
+        +docs:
+          node_color: "#4f42b5"
+      staging:
+        +docs:
+          node_color: "#FFA500"
+
 name: "jaffle"
 profile: "jaffle"
 
