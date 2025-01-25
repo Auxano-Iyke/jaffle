@@ -1,0 +1,5 @@
+dbt-core==1.7.18
+dbt-postgres==1.7.18
+dbt-metricflow==0.6.0
+dbt-metric-utils
+numpy==1.26.4
