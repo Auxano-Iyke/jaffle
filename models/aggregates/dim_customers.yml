@@ -14,7 +14,7 @@ semantic_models:
         type: categorical
       - name: customer_type
         type: categorical
-      - name: first_ordered_at 
+      - name: first_ordered_at
         type: time
         type_params:
           time_granularity: day

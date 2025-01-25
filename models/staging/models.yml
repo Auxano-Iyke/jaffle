@@ -13,7 +13,7 @@ models:
         description: "Stock keeping unit for the product"
       - name: order_id
         description: "Identifier for the order"
- 
+
   - name: stg_orders
     description: "This model processes the raw orders data"
     columns:
@@ -32,8 +32,6 @@ models:
         description: "Tax applied on the order"
       - name: order_total
         description: "total order value"
-
-
 
   - name: stg_customers
     description: "This model processes the raw customer data"
